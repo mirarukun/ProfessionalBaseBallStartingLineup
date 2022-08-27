@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新規登録画面</title>
+<link th:href="@{/css/test.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>プロ野球スターティングラインナップ</h1>
+	
+	<h2>新規登録</h2>
+
+
+	<form th:method="post" action="/addUser" th:object="${userModel}">
+
+		<div th:text="アカウント名" />
+			<input name="name" th:value="*{name}">
+		</div>
+
+		<div th:text="メールアドレス" />
+			<input type="email" name="email" th:value="*{email}">
+		</div>
+
+		<div th:text="パスワード" />
+			<input type="password" name="password">
+		</div>
+
+		<div>
+			<input type="submit" value="登録" class="user-botton" />
+		</div>
+	</form>
+	
+	<form action="/">
+		<input type="submit" value="戻る" class="user-botton" />
+	</form>
+	
+</body>
+</html>

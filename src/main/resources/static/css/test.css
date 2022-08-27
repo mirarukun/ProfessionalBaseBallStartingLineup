@@ -1,0 +1,42 @@
+@charset "UTF-8";
+h1 {
+  position: relative;
+  padding: 1rem 2rem calc(1rem + 10px);
+  background: #fff100;
+}
+
+h1:before {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 4px solid #000;
+}
+
+.top-botton{
+	border:none;
+	height:30px;
+	width: 140px;
+	color: #fff;
+  background-color: #eb6100;
+}
+
+.top-botton:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.user-botton{
+	border:none;
+	height:30px;
+	width: 100px;
+	color: #fff;
+  background-color: #eb6100;
+}
+
+.user-botton:hover {
+  color: #fff;
+  background: #f56500;
+}
