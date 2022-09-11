@@ -8,6 +8,18 @@
 <body>
 <h1> プロ野球スターティングラインナップ </h1>
 <p>ログイン</p>
+
+	<form method="post" action="/postLogin" th:object="${loginForm}">
+		<label for="email">メールアドレス</label></br>
+		<input type="email" name="email" th:value="${email}" /></br>
+		
+		<label for="password">パスワード</label></br>
+		<input type="password" name="password" th:value="${password}" /></br>
+		
+		<input type="submit" value="ログイン" class="user-botton"/>
+		
+	</form>
+
 	<form action="/">
 		<input type="submit" value="戻る" class="user-botton" />
 	</form>

@@ -13,22 +13,18 @@
 
 	<form th:method="post" action="/addUser" th:object="${userModel}">
 
-		<div th:text="アカウント名" />
-			<input name="name" th:value="*{name}">
-		</div>
-
-		<div th:text="メールアドレス" />
-			<input type="email" name="email" th:value="*{email}">
-		</div>
-
-		<div th:text="パスワード" />
-			<input type="password" name="password">
-		</div>
-
-		<div>
-			<input type="submit" value="登録" class="user-botton" />
-		</div>
+		<label for="nickname">アカウント名</label></br>
+		<input type="text" name="nickname" th:value="${nickname}" /></br>
+		
+		<label for="email">メールアドレス</label></br>
+		<input type="email" name="email" th:value="${email}" /></br>
+		
+		<label for="password">パスワード</label></br>
+		<input type="password" name="password" th:value="${password}" /></br>
+		
+		<input type="submit" value="登録" class="user-botton" />
 	</form>
+	
 	
 	<form action="/">
 		<input type="submit" value="戻る" class="user-botton" />

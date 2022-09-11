@@ -7,6 +7,11 @@
 </head>
 <body>
 <h1> プロ野球スターティングラインナップ </h1>
+
+<th:block th:if="${loginUser != null}">
+	<p th:text="${loginUser.nickname} + さん、こんにちは！"></p>
+</th:block>
+
 <p>自分だけの理想のスタメンを作成しよう！！</p>
 	<!-- 新規作成ボタン -->
 	<div class="new-user">
@@ -26,6 +31,13 @@
 	<div class="edit-user">
 		<form action="/editUser">
 			<input type="submit" value="ユーザ編集" class="top-botton" />
+		</form>
+	</div>
+
+	<!-- ログアウトボタン -->
+	<div class="logout">
+		<form action="/logout">
+			<input type="submit" value="ログアウト" class="top-botton" />
 		</form>
 	</div>
 </body>
