@@ -13,32 +13,39 @@
 </th:block>
 
 <p>自分だけの理想のスタメンを作成しよう！！</p>
-	<!-- 新規作成ボタン -->
-	<div class="new-user">
-		<form action="/newUser">
-			<input type="submit" value="新規作成" class="top-botton" />
-		</form>
-	</div>
+	
+	<!-- 初期（ログインしてない時）表示ボタン -->
+	<th:block th:if="${loginUser == null}">
+		<!-- 新規作成ボタン -->
+		<div class="new-user">
+			<form action="/newUser">
+				<input type="submit" value="新規作成" class="top-botton" />
+			</form>
+		</div>
 
-	<!-- ログイン -->
-	<div class="login">
-		<form action="/login">
-			<input type="submit" value="ログイン" class="top-botton" />
-		</form>
-	</div>
+		<!-- ログイン -->
+		<div class="login">
+			<form action="/login">
+				<input type="submit" value="ログイン" class="top-botton" />
+			</form>
+		</div>
+	</th:block>
 
-	<!-- ユーザ編集ボタン -->
-	<div class="edit-user">
-		<form action="/editUser">
-			<input type="submit" value="ユーザ編集" class="top-botton" />
-		</form>
-	</div>
+	<!-- ログイン時表示ボタン -->
+	<th:block th:if="${loginUser != null}">
+		<!-- ユーザ編集ボタン -->
+		<div class="edit-user">
+			<form action="/editUser">
+				<input type="submit" value="ユーザ編集" class="top-botton" />
+			</form>
+		</div>
 
-	<!-- ログアウトボタン -->
-	<div class="logout">
-		<form action="/logout">
-			<input type="submit" value="ログアウト" class="top-botton" />
-		</form>
-	</div>
+		<!-- ログアウトボタン -->
+		<div class="logout">
+			<form action="/logout">
+				<input type="submit" value="ログアウト" class="top-botton" />
+			</form>
+		</div>
+	</th:block>
 </body>
 </html>
