@@ -40,3 +40,7 @@ h1:before {
   color: #fff;
   background: #f56500;
 }
+
+.error {
+	color: red;
+}

@@ -8,6 +8,12 @@
 <body>
 <h1> プロ野球スターティングラインナップ </h1>
 <p>ログイン</p>
+	<!-- エラー内容を表示 -->
+	<div class="error">
+		<div th:each="errorMessage : ${errorMessages}">
+		<p>○<th:block th:text="${errorMessage}"></th:block></p>
+		</div>
+	</div>
 
 	<form method="post" action="/postLogin" th:object="${loginForm}">
 		<label for="email">メールアドレス</label></br>

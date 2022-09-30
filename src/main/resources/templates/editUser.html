@@ -8,6 +8,26 @@
 <body>
 <h1> プロ野球スターティングラインナップ </h1>
 <p>ユーザー編集</p>
+	<div class="error">
+		<div th:each="errorMessage : ${errorMessages}">
+		<p>○<th:block th:text="${errorMessage}"></th:block></p>
+		</div>
+	</div>
+	
+	<form th:method="post" action="/editUser" th:object="${userModel}">
+
+		<label for="nickname">アカウント名</label></br>
+		<input type="text" name="nickname" th:value="${userModel.nickname}" /></br>
+		
+		<label for="email">メールアドレス</label></br>
+		<input type="email" name="email" th:value="${userModel.email}" /></br>
+		
+		<label for="password">パスワード</label></br>
+		<input type="password" name="password" th:value="${userModel.password}" /></br>
+		
+		<input type="submit" value="登録" class="user-botton" />
+	</form>
+	
 	<form action="/">
 		<input type="submit" value="戻る" class="user-botton" />
 	</form>

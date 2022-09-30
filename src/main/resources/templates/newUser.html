@@ -9,7 +9,12 @@
 	<h1>プロ野球スターティングラインナップ</h1>
 	
 	<h2>新規登録</h2>
-
+	<!-- エラー内容を表示 -->
+	<div class="error">
+		<div th:each="errorMessage : ${errorMessages}">
+		<p>○<th:block th:text="${errorMessage}"></th:block></p>
+		</div>
+	</div>
 
 	<form th:method="post" action="/addUser" th:object="${userModel}">
 

@@ -10,15 +10,19 @@ import com.example.demo.repository.UserRepository;
 public class UserService {
 	@Autowired
 	UserRepository userRepository;
-	
+
 	// レコード追加
 	public void saveUser(User user) {
 		userRepository.save(user);
 	}
-	
-	// レコード１件取得（ログイン処理。メールアドレスをキーとしている）
-		public User select(String email) {
-			return userRepository.findByEmail(email);
-		}
 
+	// レコード１件取得（ログイン処理。メールアドレスをキーとしている）
+	public User select(String email) {
+		return userRepository.findByEmail(email);
+	}
+	
+	// レコード更新
+	public void updateUser(User user){
+		userRepository.save(user);
+	}
 }
