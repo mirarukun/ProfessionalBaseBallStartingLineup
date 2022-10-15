@@ -9,12 +9,14 @@
 	<h1>プロ野球スターティングラインナップ</h1>
 	
 	<h2>選手登録</h2>
-	<!-- エラー内容を表示 -->
-	<div class="error">
-	</div>
+	<!--
 	
-	<!-- 選手登録フォーム -->
-	<!--  
+	<div class="error">
+		<div th:each="errorMessage : ${errorMessages}">
+		<p>○<th:block th:text="${errorMessage}"></th:block></p>
+		</div>
+	</div>
+
 	<form th:method="post" action="/addUser" th:object="${userModel}">
 
 		<label for="nickname">アカウント名</label></br>
@@ -33,5 +35,6 @@
 	<form action="/">
 		<input type="submit" value="戻る" class="user-botton" />
 	</form>
+	
 </body>
 </html>
