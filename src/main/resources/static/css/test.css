@@ -44,3 +44,24 @@ h1:before {
 .error {
 	color: red;
 }
+
+.player-botton{
+	border:none;
+	height:30px;
+	width: 100px;
+	color: #fff;
+  background-color: #eb6100;
+}
+
+.player-botton:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.player-register-botton{
+	margin:20px 5px 5px;
+}
+
+.players-back-botton{
+	margin:5px;
+}

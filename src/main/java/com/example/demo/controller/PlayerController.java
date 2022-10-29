@@ -19,4 +19,6 @@ public class PlayerController {
 			mav.setViewName("playerRegister");
 			return mav;
 		}
+		
+	
 }

@@ -25,7 +25,10 @@ public class Players {
 	private String name;
 
 	@Column
-	private String strongArm;
+	private String throwingStrongArm;
+	
+	@Column
+	private String battingStrongArm;
 
 	@Column
 	private String mainPosition;

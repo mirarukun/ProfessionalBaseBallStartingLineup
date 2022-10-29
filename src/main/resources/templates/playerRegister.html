@@ -16,25 +16,69 @@
 		<p>○<th:block th:text="${errorMessage}"></th:block></p>
 		</div>
 	</div>
+-->
+	<form th:method="post" action="/addPlayer" th:object="${playerModel}">
 
-	<form th:method="post" action="/addUser" th:object="${userModel}">
-
-		<label for="nickname">アカウント名</label></br>
-		<input type="text" name="nickname" th:value="${nickname}" /></br>
+		<label for="name">選手名</label></br>
+		<input type="text" name="name" th:value="${name}" /></br>
 		
-		<label for="email">メールアドレス</label></br>
-		<input type="email" name="email" th:value="${email}" /></br>
+		<label for="throwing_strong_arm">利き腕</label></br>
+		<select name="throwing_strong_arm" required>
+			<option value="" selected disabled>--</option>
+			<option value="右">右投げ</option>
+			<option value="左">左投げ</option>
+			<option value="両">両投げ</option>
+		</select></br>
 		
-		<label for="password">パスワード</label></br>
-		<input type="password" name="password" th:value="${password}" /></br>
-		
-		<input type="submit" value="登録" class="user-botton" />
-	</form>
-	-->
 	
-	<form action="/">
-		<input type="submit" value="戻る" class="user-botton" />
+		<label for="batting_strong_arm">打席</label></br>
+		<select name="batting_strong_arm" required>
+			<option value="" selected disabled>--</option>
+			<option value="右">右打ち</option>
+			<option value="左">左打ち</option>
+			<option value="両">両打ち</option>
+		</select></br>
+		
+		<label for="main_position">守備位置（メインポジション）</label></br>
+		<select name="main_position" required>
+			<option value="" selected disabled>---</option>
+			<option value="先発投手">投手（先発）</option>
+			<option value="中継ぎ投手">投手（中継ぎ）</option>
+			<option value="抑え投手">投手（抑え）</option>
+			<option value="捕手">捕手</option>
+			<option value="一塁手">一塁手</option>
+			<option value="二塁手">二塁手</option>
+			<option value="三塁手">三塁手</option>
+			<option value="遊撃手">遊撃手</option>
+			<option value="左翼手">左翼手</option>
+			<option value="中堅手">中堅手</option>
+			<option value="右翼手">右翼手</option>
+		</select></br>
+		
+		<label for="sub_position">その他に可能な守備位置（サブポジション） *複数選択可</label></br>
+		<input type="checkbox" name="sub_position" value="先発投手">投手（先発）
+		<input type="checkbox" name="sub_position" value="中継ぎ投手">投手（中継ぎ)
+		<input type="checkbox" name="sub_position" value="抑え投手">投手（抑え）</br>
+		<input type="checkbox" name="sub_position" value="捕手">捕手
+		<input type="checkbox" name="sub_position" value="一塁手">一塁手
+		<input type="checkbox" name="sub_position" value="二塁手">二塁手
+		<input type="checkbox" name="sub_position" value="三塁手">三塁手
+		<input type="checkbox" name="sub_position" value="遊撃手">遊撃手</br>
+		<input type="checkbox" name="sub_position" value="左翼手">左翼手
+		<input type="checkbox" name="sub_position" value="中堅手">中堅手
+		<input type="checkbox" name="sub_position" value="右翼手">右翼手</br>
+		<input type="checkbox" name="sub_position" value="">サブポジションはなし</br>
+	
+	<div class="player-register-botton">
+		<input type="submit" value="選手登録" class="player-botton" />
+	</div>
 	</form>
+	
+	<div class="players-back-botton">
+		<form action="/">
+			<input type="submit" value="トップへ戻る" class="player-botton" />
+		</form>
+	</div>
 	
 </body>
 </html>
