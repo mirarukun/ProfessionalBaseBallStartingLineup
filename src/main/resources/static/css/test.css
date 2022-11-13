@@ -21,6 +21,7 @@ h1:before {
 	width: 140px;
 	color: #fff;
   background-color: #eb6100;
+  margin:5px;
 }
 
 .top-botton:hover {
@@ -64,4 +65,17 @@ h1:before {
 
 .players-back-botton{
 	margin:5px;
+}
+
+.startingLineup-botton{
+	border:none;
+	height:30px;
+	width: 100px;
+	color: #fff;
+  background-color: #eb6100;
+}
+
+.startingLineup-botton:hover {
+	color: #fff;
+	background: #f56500;
 }

@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "users")
 @Getter
 @Setter
-public class Players {
+public class Player {
 	
 	@Id
 	@Column //カラム名の指定
