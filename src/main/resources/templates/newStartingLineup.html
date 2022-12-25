@@ -9,6 +9,29 @@
 	<h1>プロ野球スターティングラインナップ</h1>
 	
 	<h2>スターティングオーダー</h2>
+	<form th:method="post" action="/addStartingLineup" th:object="${startingLineupModel}">
+	
+	<label for="onePlayerId">一番：</label>
+		<select name="onePlayerId" th:value="${onePlayerId}" required>
+			<option value="" selected disabled>--</option>
+			<option th:value="右">右投げ</option>
+			<option th:value="左">左投げ</option>
+			<option th:value="両">両投げ</option>
+		</select></br>
+		
+		<label for="onePositionId">ポジション：</label>
+		<select name="onePositionId" th:value="${onePositionId}" required>
+			<option value="" selected disabled>--</option>
+			<option th:value="右">右投げ</option>
+			<option th:value="左">左投げ</option>
+			<option th:value="両">両投げ</option>
+		</select></br>
+	
+	<div class="startingLineup-register-botton">
+		<input type="submit" value="スタメン決定" class="startingLineup-botton" />
+	</div>
+	</form>
+		
 	
 	<div class="startingLineup-back-botton">
 		<form action="/">

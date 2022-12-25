@@ -13,6 +13,11 @@ public class PlayerService {
 
 	// レコード追加
 	public void savePlayer(Player player) {
-		playerRepository.save(player);
+		
+     //サブポジションを配列から文字列に修正
+	String str = String.join(",", player.getArraySubPosition());
+	player.setSubPosition(str);
+	
+	playerRepository.save(player);
 	}
 }

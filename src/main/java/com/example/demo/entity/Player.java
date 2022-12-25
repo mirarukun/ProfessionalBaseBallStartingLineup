@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "players")
 @Getter
 @Setter
 public class Player {
@@ -32,6 +32,9 @@ public class Player {
 
 	@Column
 	private String mainPosition;
+	
+	@Column(insertable=false, updatable=false)
+	private String[] arraySubPosition;
 	
 	@Column
 	private String subPosition;
