@@ -11,31 +11,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "players")
+@Table(name = "positions")
 @Getter
 @Setter
-public class Player {
-	
+public class Position {
+
 	@Id
 	@Column //カラム名の指定
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //自動採番
 	private int id;
 
 	@Column
-	private String name;
+	private String position;
 
-	@Column
-	private String throwingStrongArm;
-	
-	@Column
-	private String battingStrongArm;
-
-	@Column
-	private String mainPosition;
-	
-//	@Column(nullable = true, insertable=false, updatable=false)
-//	private String[] arraySubPosition;
-	
-	@Column
-	private String subPosition;
 }

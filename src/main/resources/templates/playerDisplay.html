@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登録済選手表示</title>
+<link th:href="@{/css/test.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>プロ野球スターティングラインナップ</h1>
+	
+	<h2>登録済選手一覧</h2>
+
+	
+	<table border="1">
+    	<tr>
+      		<th>選手名</th>
+      		<th>打席</th>
+      		<th>利き腕</th>
+      		<th>メインポジション</th>
+      		<th>サブポジション</th>
+    	</tr>
+    	<th:block th:each="player : ${Players}">
+    	<tr>
+      		<td><th:block th:text="${player.name}"></th:block></td>
+      		<td><th:block th:text="${player.battingStrongArm}"></th:block></td>
+      		<td><th:block th:text="${player.throwingStrongArm}"></th:block></td>
+      		<td><th:block th:text="${player.mainPosition}"></th:block></td>
+      		<td><th:block th:text="${player.subPosition}"></th:block></td>
+    	</tr>
+    	</th:block>
+  	</table>
+	
+	<div class="players-back-botton">
+		<form action="/">
+			<input type="submit" value="トップへ戻る" class="player-botton" />
+		</form>
+	</div>
+
+</body>
+
+</html>

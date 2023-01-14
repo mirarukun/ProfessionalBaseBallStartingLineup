@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,10 @@ public class PlayerService {
 	player.setSubPosition(str);
 	
 	playerRepository.save(player);
+	}
+
+	public List<Player> findAllPlayer() {
+		//全登録されている全ての選手を取得
+		return playerRepository.findAll();
 	}
 }

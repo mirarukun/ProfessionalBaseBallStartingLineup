@@ -11,27 +11,192 @@
 	<h2>スターティングオーダー</h2>
 	<form th:method="post" action="/addStartingLineup" th:object="${startingLineupModel}">
 	
-	<label for="onePlayerId">一番：</label>
+	<h2>打順</h2>
+		<label for="onePlayerId">1番：</label>
 		<select name="onePlayerId" th:value="${onePlayerId}" required>
 			<option value="" selected disabled>--</option>
-			<option th:value="右">右投げ</option>
-			<option th:value="左">左投げ</option>
-			<option th:value="両">両投げ</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
 		</select></br>
+	
 		
 		<label for="onePositionId">ポジション：</label>
 		<select name="onePositionId" th:value="${onePositionId}" required>
 			<option value="" selected disabled>--</option>
-			<option th:value="右">右投げ</option>
-			<option th:value="左">左投げ</option>
-			<option th:value="両">両投げ</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<label for="twoPlayerId">2番：</label>
+		<select name="twoPlayerId" th:value="${twoPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
 		</select></br>
 	
+		
+		<label for="twoPositionId">ポジション：</label>
+		<select name="twoPositionId" th:value="${twoPositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<label for="threePlayerId">3番：</label>
+		<select name="threePlayerId" th:value="${threePlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="threePositionId">ポジション：</label>
+		<select name="threePositionId" th:value="${threePositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<label for="fourPlayerId">4番：</label>
+		<select name="fourPlayerId" th:value="${fourPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="fourPositionId">ポジション：</label>
+		<select name="fourPositionId" th:value="${fourPositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		<label for="fivePlayerId">5番：</label>
+		<select name="fivePlayerId" th:value="${fivePlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="fivePositionId">ポジション：</label>
+		<select name="fivePositionId" th:value="${fivePositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+			<label for="sixPlayerId">6番：</label>
+		<select name="sixPlayerId" th:value="${sixPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="sixPositionId">ポジション：</label>
+		<select name="sixPositionId" th:value="${sixPositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+			<label for="sevenPlayerId">7番：</label>
+		<select name="sevenPlayerId" th:value="${sevenPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="sevenPositionId">ポジション：</label>
+		<select name="sevenPositionId" th:value="${sevenPositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+			<label for="eightPlayerId">8番：</label>
+		<select name="eightPlayerId" th:value="${eightPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="eightPositionId">ポジション：</label>
+		<select name="eightPositionId" th:value="${eightPositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		
+			<label for="ninePlayerId">9番：</label>
+		<select name="ninePlayerId" th:value="${ninePlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+	
+		
+		<label for="ninePositionId">ポジション：</label>
+		<select name="ninePositionId" th:value="${ninePositionId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="position : ${Positions}">
+					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<h2>投手陣</h2>
+		
+		<label for="startterPitcherPlayerId">先発投手：</label>
+		<select name="startterPitcherPlayerId" th:value="${startterPitcherPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<label for="setUpperPitcherPlayerId">中継ぎ投手：</label>
+		<select name="setUpperPitcherPlayerId" th:value="${setUpperPitcherPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		<label for="closerPitcherPlayerId">抑え投手：</label>
+		<select name="closerPitcherPlayerId" th:value="${closerPitcherPlayerId}" required>
+			<option value="" selected disabled>--</option>
+				<th:block th:each="player : ${Players}">
+					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+				</th:block>
+		</select></br>
+		
+		
 	<div class="startingLineup-register-botton">
 		<input type="submit" value="スタメン決定" class="startingLineup-botton" />
 	</div>
 	</form>
-		
 	
 	<div class="startingLineup-back-botton">
 		<form action="/">

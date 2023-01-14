@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,19 @@ public class PlayerController {
 			// TOP画面へリダイレクト
 			return new ModelAndView("redirect:/");
 			
+		}
+		
+		// 登録選手表示画面
+		@GetMapping("/playerDisplay")
+		public ModelAndView playerDisplay() {
+		ModelAndView mav = new ModelAndView();
+		// 登録済選手を全件取得
+		List<Player> players = playerService.findAllPlayer();
+		// 画面遷移先を指定
+		mav.setViewName("/playerDisplay");
+		// 投稿データオブジェクトを保管
+		mav.addObject("Players", players);
+		
+		return mav;
 		}
 }
