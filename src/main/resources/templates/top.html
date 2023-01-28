@@ -68,5 +68,140 @@
 			</form>
 		</div>	
 	</th:block>
+
+	<h2>投稿済スターティングオーダー</h2>
+	
+	<th:block th:each="StartingLineup : ${StartingLineups}">
+		
+		<th:block th:each="user : ${users}">
+			<th:block th:if= "${StartingLineup.userId == user.id}">
+				<p>投稿者：<th:block th:text="${user.nickname}"></th:block></p>
+			</th:block>
+		</th:block>
+	
+		<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+			
+    			<th:block th:if= "${player.id == StartingLineup.onePlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.onePositionId}"> 
+    					1番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			
+      			<th:block th:if= "${player.id == StartingLineup.twoPlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.twoPositionId}"> 
+    					2番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      			
+      		</th:block>
+      	</th:block>
+      			
+      		
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.threePlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.threePositionId}"> 
+    					3番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.fourPlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.fourPositionId}"> 
+    					4番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.fivePlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.fivePositionId}"> 
+    					5番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.sixPlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.sixPositionId}"> 
+    					6番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.sevenPlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.sevenPositionId}"> 
+    					7番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.eightPlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.eightPositionId}"> 
+    					8番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+			<th:block th:each="position : ${positions}">
+      			<th:block th:if= "${player.id == StartingLineup.ninePlayerId}"> 
+    				<th:block th:if="${position.id == StartingLineup.ninePositionId}"> 
+    					9番：<th:block th:text="${player.name}"></th:block>
+      						[<th:block th:text="${position.position}"></th:block>]</br>
+      				</th:block>
+      			</th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+      		<th:block th:if= "${player.id == StartingLineup.starterPitcherPlayerId}"> 
+    			[先発]<th:block th:text="${player.name}"></th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+      		<th:block th:if= "${player.id == StartingLineup.setUpperPitcherPlayerId}"> 
+    			/[中継ぎ]<th:block th:text="${player.name}"></th:block>
+      		</th:block>
+      	</th:block>
+      	
+      	<th:block th:each="player : ${players}">
+      		<th:block th:if= "${player.id == StartingLineup.closerPitcherPlayerId}"> 
+    			/[抑え]<th:block th:text="${player.name}"></th:block>
+      		</th:block>
+      	</th:block>
+      	
+  	</th:block>
+      
 </body>
 </html>

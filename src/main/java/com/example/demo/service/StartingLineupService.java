@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class StartingLineupService {
 	public void saveStartingLineup(StartingLineup startingLineup) {
 		startingLineupRepository.save(startingLineup);
 	}
-
+	
+	//登録されているスタメン情報を取得
+	public List<StartingLineup> findAllStartingLineup() {
+		return startingLineupRepository.findAll();
+	}
 
 }

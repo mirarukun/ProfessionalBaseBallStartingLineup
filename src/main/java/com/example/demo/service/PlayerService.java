@@ -27,4 +27,9 @@ public class PlayerService {
 		//全登録されている全ての選手を取得
 		return playerRepository.findAll();
 	}
+	
+	//選手１件取得
+	public Player selectPlayer(int id) {
+		return playerRepository.findById(id);
+	}
 }

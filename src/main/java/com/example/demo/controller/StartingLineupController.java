@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.entity.Player;
 import com.example.demo.entity.Position;
 import com.example.demo.entity.StartingLineup;
+import com.example.demo.entity.User;
 import com.example.demo.service.PlayerService;
 import com.example.demo.service.PositionService;
-import com.example.demo.service.StartingLineupService;
+import com.example.demo.service.StartingLineupService; 
 
 @Controller
 public class StartingLineupController {
@@ -26,6 +29,10 @@ public class StartingLineupController {
 	
 	@Autowired
 	PositionService positionService;
+	
+	//セッションに関するAutowired
+	@Autowired
+	HttpSession session;
 	
 	//スタメン登録画面表示処理
 	@GetMapping("/newStartingLineup")
@@ -51,6 +58,12 @@ public class StartingLineupController {
 	//スタメン登録処理
 	@PostMapping("/addStartingLineup")
 	public ModelAndView addStartingLineup(@ModelAttribute("startingLineupModel") StartingLineup startingLineup){
+		// session領域のloginUserの情報をgetAttributeし、User型のuserに格納
+		User user = (User) session.getAttribute("loginUser");
+		
+		//ユーザーIDをスターティングラインナップモデルに格納
+		startingLineup.setUserId(user.getId());
+		
 		//スタメンをテーブルに格納
 		startingLineupService.saveStartingLineup(startingLineup);
 

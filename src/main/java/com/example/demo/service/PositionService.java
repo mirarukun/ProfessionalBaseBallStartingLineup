@@ -18,5 +18,11 @@ public class PositionService {
 		//全登録されている全ての選手を取得
 		return positionRepository.findAll();
 	}
-
+	
+	
+	
+	//ポジション１件取得
+		public Position selectPosition(int id) {
+			return positionRepository.findById(id);
+		}
 }

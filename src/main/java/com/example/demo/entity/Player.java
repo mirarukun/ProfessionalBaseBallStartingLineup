@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +34,9 @@ public class Player {
 	@Column
 	private String mainPosition;
 	
-//	@Column(nullable = true, insertable=false, updatable=false)
-//	private String[] arraySubPosition;
+	@Column(insertable=false, updatable=false)
+	@Transient
+	private String[] arraySubPosition;
 	
 	@Column
 	private String subPosition;

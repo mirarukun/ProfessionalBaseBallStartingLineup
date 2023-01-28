@@ -79,7 +79,7 @@ public class StartingLineup {
 	private int ninePositionId;
 	
 	@Column
-	private int startterPitcherPlayerId;
+	private int starterPitcherPlayerId;
 	
 	@Column
 	private int setUpperPitcherPlayerId;

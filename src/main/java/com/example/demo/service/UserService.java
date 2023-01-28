@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +18,18 @@ public class UserService {
 		userRepository.save(user);
 	}
 
-	// レコード１件取得（ログイン処理。メールアドレスをキーとしている）
+	// レコード１件取得（ログイン処理　メールアドレスをキーとしている）
 	public User select(String email) {
 		return userRepository.findByEmail(email);
+	}
+	
+	// レコード１件取得（スタメン表示処理用　ユーザーIDをキーとしている）
+	public User selectUser(int id) {
+		return userRepository.findById(id);
+	}
+	
+	public List<User> findAllUser() {
+		return userRepository.findAll();
 	}
 	
 	// レコード更新

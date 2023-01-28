@@ -16,7 +16,7 @@
 		<select name="onePlayerId" th:value="${onePlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -25,7 +25,7 @@
 		<select name="onePositionId" th:value="${onePositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -33,7 +33,7 @@
 		<select name="twoPlayerId" th:value="${twoPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -42,7 +42,7 @@
 		<select name="twoPositionId" th:value="${twoPositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -50,7 +50,7 @@
 		<select name="threePlayerId" th:value="${threePlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -59,7 +59,7 @@
 		<select name="threePositionId" th:value="${threePositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -67,7 +67,7 @@
 		<select name="fourPlayerId" th:value="${fourPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -76,7 +76,7 @@
 		<select name="fourPositionId" th:value="${fourPositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -84,7 +84,7 @@
 		<select name="fivePlayerId" th:value="${fivePlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -93,7 +93,7 @@
 		<select name="fivePositionId" th:value="${fivePositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -101,7 +101,7 @@
 		<select name="sixPlayerId" th:value="${sixPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -110,7 +110,7 @@
 		<select name="sixPositionId" th:value="${sixPositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -118,7 +118,7 @@
 		<select name="sevenPlayerId" th:value="${sevenPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -127,7 +127,7 @@
 		<select name="sevenPositionId" th:value="${sevenPositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -135,7 +135,7 @@
 		<select name="eightPlayerId" th:value="${eightPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -144,7 +144,7 @@
 		<select name="eightPositionId" th:value="${eightPositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -153,7 +153,7 @@
 		<select name="ninePlayerId" th:value="${ninePlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 	
@@ -162,17 +162,17 @@
 		<select name="ninePositionId" th:value="${ninePositionId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="position : ${Positions}">
-					<option th:value= "${position.position}"> <th:block th:text="${position.position}"></th:block> </option>
+					<option th:value= "${position.id}"> <th:block th:text="${position.position}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
 		<h2>投手陣</h2>
 		
-		<label for="startterPitcherPlayerId">先発投手：</label>
-		<select name="startterPitcherPlayerId" th:value="${startterPitcherPlayerId}" required>
+		<label for="starterPitcherPlayerId">先発投手：</label>
+		<select name="starterPitcherPlayerId" th:value="${starterPitcherPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -180,7 +180,7 @@
 		<select name="setUpperPitcherPlayerId" th:value="${setUpperPitcherPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
@@ -188,7 +188,7 @@
 		<select name="closerPitcherPlayerId" th:value="${closerPitcherPlayerId}" required>
 			<option value="" selected disabled>--</option>
 				<th:block th:each="player : ${Players}">
-					<option th:value= "${player.name}"> <th:block th:text="${player.name}"></th:block> </option>
+					<option th:value= "${player.id}"> <th:block th:text="${player.name}"></th:block> </option>
 				</th:block>
 		</select></br>
 		
