@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "starting_lineups")
+@Table(name = "StartingLineups")
 @Getter
 @Setter
 public class StartingLineup {

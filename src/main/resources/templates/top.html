@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TOP</title>
+<title>プロ野球スタメンTOP</title>
 <link th:href="@{/css/test.css}" rel="stylesheet">
 </head>
 <body>
@@ -201,7 +201,22 @@
       		</th:block>
       	</th:block>
       	
+      	<!-- コメント関係 -->
+      	<h2>このスタメンへのコメント</h2>
+      	    <div id="comments">
+        		<!-- コメント一覧はここに表示される -->
+        	</div>
+        	
+        <h2>コメントを追加する</h2>
+        <form id="commentForm">
+        	<textarea id="commentText" rows="4" cols="50" placeholder="コメントを入力してください"></textarea><br>
+        		<button type="submit" class="top-botton">コメントを投稿</button>
+        </form>
+      	
   	</th:block>
+    
+    <!-- JavaScriptファイルを読み込む -->
+	<script src="js/topScript.js"></script>
       
 </body>
 </html>
