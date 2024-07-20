@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,10 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.entity.Comment;
+import com.example.demo.entity.Iine;
 import com.example.demo.entity.Player;
 import com.example.demo.entity.Position;
 import com.example.demo.entity.StartingLineup;
 import com.example.demo.entity.User;
+import com.example.demo.service.CommentService;
+import com.example.demo.service.IineService;
 import com.example.demo.service.PlayerService;
 import com.example.demo.service.PositionService;
 import com.example.demo.service.StartingLineupService;
@@ -36,6 +42,12 @@ public class TopController {
 	
 	@Autowired
 	PositionService positionService;
+	
+	@Autowired
+	CommentService commentService;
+	
+	@Autowired
+	IineService iineService;
 	
 	//変数定義
 	User startingLineupUser;
@@ -82,11 +94,28 @@ public class TopController {
 		// ユーザー情報を全件取得
 		List<User> users = userService.findAllUser();
 		
+		// コメントを全件取得
+		List<Comment> contentData = commentService.findAllComment();
+		
+		// 各スタメンに対応するいいね数を取得
+		List<Iine> iines = iineService.getAllIines();
+		
+	    // 第一引数にスタメンID、第二引数にいいね数を入れる予定
+        Map<Integer, Integer> iineMap = new HashMap<>();
+        
+        // リストの各要素についてループを回します
+        for (Iine iine : iines) {
+            // StartingLineupIdをキーに、IineCountをバリューとしてマップに追加します
+            iineMap.put(iine.getStartingLineupId(), iine.getIineCount());
+        }
+		
 		mav.addObject("loginUser", user);
 		mav.addObject("StartingLineups", StartingLineups);
 		mav.addObject("players", players);
 		mav.addObject("positions", positions);
 		mav.addObject("users", users);
+		mav.addObject("contents", contentData);
+		mav.addObject("iineMap", iineMap);
 		mav.setViewName("top");
 		return mav;
 	}

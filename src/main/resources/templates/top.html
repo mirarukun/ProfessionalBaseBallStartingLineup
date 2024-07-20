@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>プロ野球スタメンTOP</title>
 <link th:href="@{/css/test.css}" rel="stylesheet">
+<!-- JavaScriptファイルを読み込む -->
+<script src="js/topScript.js"></script>
 </head>
 <body>
 <h1> プロ野球スターティングラインナップ </h1>
@@ -201,22 +203,25 @@
       		</th:block>
       	</th:block>
       	
-      	<!-- コメント関係 -->
-      	<h2>このスタメンへのコメント</h2>
-      	    <div id="comments">
-        		<!-- コメント一覧はここに表示される -->
-        	</div>
-        	
-        <h2>コメントを追加する</h2>
-        <form id="commentForm">
-        	<textarea id="commentText" rows="4" cols="50" placeholder="コメントを入力してください"></textarea><br>
-        		<button type="submit" class="top-botton">コメントを投稿</button>
-        </form>
+      	<!-- いいねボタン -->
+      	<div class="post">
+   			 <button class="iineButton" th:attr="data-iine-id=${StartingLineup.id}">いいね</button>
+    		<span class="iineCount" th:text="${iineMap[StartingLineup.id]}">0</span>
+		</div>
       	
-  	</th:block>
-    
-    <!-- JavaScriptファイルを読み込む -->
-	<script src="js/topScript.js"></script>
-      
+		<!-- コメント追加フォーム -->
+		<h2>コメントを追加する</h2>
+		<form id="commentForm" th:object="${commentModel}">
+			<input type="hidden" id="StartingLineupId" name="StartingLineupId" th:value="${StartingLineup.id}" />
+			<textarea id="commentText" name="text" rows="4" cols="50" placeholder="コメントを入力してください"></textarea><br>
+			<button type="button" id="commentSubmit">コメントを投稿</button>
+		</form>
+	
+		<!-- コメント表示部分 -->
+		<h2>この投稿のコメント</h2>
+		<div th:each="content : ${contents}" id="addContent">
+			<h4 th:text="${content.text}"></h4>
+		</div>
+	</th:block>
 </body>
 </html>
